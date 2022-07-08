@@ -26,73 +26,119 @@ We are going to use the built-in class of list in Python to represent a stack fu
 
     from inspect import stack
 
+    # Declare the Stack variable globally
+    Stack = []
+
     # Start by creating a new empty stack
-
-
     def createStack():
-        Stack = []
         return Stack
 
     # Check if the stack you created is empty
-
-
     def isStackEmpty(Stack):
         return len(Stack) == 0
 
     # Add/push elements on to the stack by appending
-
-
     def pushStack(Stack, element):
         Stack.append(element)
         # To keep track of each element that is appended use the print each element command
-    print("New element added: ", element)
+        print("New element added: ", element)
 
     # Remove an element from the top of the stack using pop function
-
-
-    def popStack(stack):
+    def popStack(Stack):
         # Need to check again if stack is empty or not
-        if (isStackEmpty(stack)):
+        if (isStackEmpty(Stack)):
             return ("The stack is empty and we cannot delete the element from the stack.")
         # If the stack is not empty then pop the element
-        return stack.pop()
+        return Stack.pop()
 
     # In order to read which element is on the top of the stack without removing it use this function
-
-
-    def topOfStack(stack):
+    def topOfStack(Stack):
         # this will always return the last element no matter what size your stack is
-        return stack[-1]
+        return Stack[-1]
 
 
-    # Watch it work. Create a new stack and perform the methods possible using the functions created above
-
-    # New Stack
-    newStack = createStack()
-
+    # Watch it work! Perform the methods possible using the functions created above.
     # Add Elemnets
-    """
-    pushStack(stack, "Hello, ")
-    pushStack(stack, "World!")
-    pushStack(stack, "this")
-    pushStack(stack, "is")
-    pushStack(stack, "implementing")
-    pushStack(stack, "a")
-    pushStack(stack, "stack")
-    pushStack(stack, "function.")"""
-
-    pushStack(stack, 1)
-    pushStack(stack, 2)
-    pushStack(stack, 3)
-
+    pushStack(Stack, "Hello, ")
+    pushStack(Stack, "World!")
+    pushStack(Stack, "this")
+    pushStack(Stack, "is")
+    pushStack(Stack, "implementing")
+    pushStack(Stack, "a")
+    pushStack(Stack, "stack")
+    pushStack(Stack, "function.")
+    pushStack(Stack, 1)
+    pushStack(Stack, 2)
+    pushStack(Stack, 3)
 
     # What is the top elemnt
-    print("The top element of the stack is ", topOfStack(stack))
+    print("The top element of the stack is ", topOfStack(Stack))
 
     # Remove elements
-    print(popStack(stack), "is removed from the stack")
+    print(popStack(Stack), "is removed from the stack")
 
     # Print the stack after removing the element
-    print("What the stack looks like after removing element: ", stack)
+    print("What the stack looks like after removing element: ", Stack)
 
-    
+    # Remove more elements & check what it looks like
+    print(popStack(Stack), "is removed from the stack")
+    print(popStack(Stack), "is removed from the stack")
+    print("What the stack looks like after removing element: ", Stack)
+
+
+Now you can try to solve a problem on your own. How would you write a program that can go back each page you are browsing on the web? This is done everytime a user clicks on the back arrow that is at the top of the window or hits the Alt/Cmd + left arrow (on the keyboard). Here's a little code to get you started. Please try to figure this out on your own before looking at the answer.
+
+
+    # Create an empty stack were the search history will be added to. This variable is declared before the rest of the code so that it is global and can be used throughout the program.
+
+    History = []
+    def historyStack():
+        Pass
+
+    def isStackEmpty(History):
+        return len(History) == 0
+
+    # A function where the websites visited will be added.
+    def addNewHistory(History, webPage):
+        Pass
+
+    # Another function can can be called to go backwards, or view previous page.
+    def goBack(History):
+        if (isStackEmpty(History)):
+            return ("Your history is empty, you can't go back.")
+        Pass
+
+    # Function to tell user what the last page was before removing it.
+    def lastPageVisited(History):
+        Pass
+
+
+    # Now test out your program.
+    # Add a few pages to your search history:
+    addNewHistory(History, "www.tutorialspoint.com")
+    addNewHistory(History, "www.youtube.com")
+    addNewHistory(History, "www.byui.edu")
+
+    # Check what your last visited page is before deleting.
+    # Last page visited:  www.byui.edu
+    print("Last page visited: ", lastPageVisited(History))
+
+    # Remove the last page and go back to previous.
+    Pass
+
+    # Add a few more pages.
+    addNewHistory(History, "www.duckduckgo.com")
+    addNewHistory(History, "www.churchofjesuschrist.org")
+
+    # List current history.
+    # Current search history:  ['www.tutorialspoint.com', 'www.youtube.com', 'www.duckduckgo.com', 'www.churchofjesuschrist.org']
+    print("Current search history: ", History)
+
+    # Remove all the pages until you have an empty stack.
+    # Current search history:  []
+    Pass
+
+    print("Current search history: ", History)
+
+
+The answer can be found at: [Stack Answer](/Tutorial/python/stack_solution.py)
