@@ -2,9 +2,9 @@
   
 Each data structure serves a purpose and it is best to know the benefits of each so that you can pick the best one to solve a problem. We will start first with stacks, the simplest of all data structures. They can also be thought of as the most important. A stack is a collection of objects that are inserted and removed by following the "Last In First Out" (LIFO) principle. This means that the last item that is added, or inserted, will have to be the first object removed. The first item added will be the last to be removed. The best example of using stacks in everyday life would be the Undo function on your word processing program. Everytime you click the undo button or type 'Ctrl Z' you are calling on the stack function to remove the last item you just typed. You can not just go and undo the first item until you have removed all the other items typed after it.  
   
-
-Stack function performance is based on the performance of the dynamic array. Big O notation is a mathematical representation of the algorithm's (or function's) performance. In Big O Notation a stack can be written as O(1). This means that on a graph the growth is constant. Whenever x gets bigger y does not. This is consider the best and most efficent of data structural performance.
-
+Big O notation is a mathematical representation of the algorithm's (or function's) performance. The O stands for order. A stack by itself has O(1) performance, except for the worse case in which the push method has an O(n). Stack function performance is based on the performance of the dynamic array. If the array is completely full then the array size needs to be changed. Then all the items must be copied from one array to another. This is why we classify a stack as O(n). If you were to graph this it would be seen as a constant increase, x = y. This is not the most efficent.
+  
+  
 ![ctrl z image](/Tutorial/pictures/ctrl_z.jpg)  
 
   
@@ -89,7 +89,8 @@ We are going to use the built-in class of list in Python to represent a stack fu
 Now you can try to solve a problem on your own. How would you write a program that can go back each page you are browsing on the web? This is done everytime a user clicks on the back arrow that is at the top of the window or hits the Alt/Cmd + left arrow (on the keyboard). Here's a little code to get you started. Please try to figure this out on your own before looking at the answer.
 
 
-    # Create an empty stack were the search history will be added to. This variable is declared before the rest of the code so that it is global and can be used throughout the program.
+    # Create an empty stack were the search history will be added to.
+    # This variable is declared before the rest of the code so that it is global and can be used throughout the program.
 
     History = []
     def historyStack():
