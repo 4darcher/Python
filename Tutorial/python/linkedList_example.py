@@ -1,5 +1,5 @@
 # Linked List Stack
-class LinkedList:
+class LinkedList():
 
     # Create a nested node class to store the data and a reference to the next node.
     class LinkedListNode:
@@ -35,7 +35,7 @@ class LinkedList:
             # Then update the head to point to the newest node
             self.head = newest
             # Increase size of linked list by one
-            self._size += 1
+        self._size += 1
 
     # Insert a new node at the tail
     def pushToTail(self, value):
@@ -47,8 +47,10 @@ class LinkedList:
             newest.prev = self.tail
             self.tail.next = newest
             self.tail = newest
+        self._size += 1
 
     # A function that will return true if the stack is empty and false if elements are still in it.
+
     def is_empty(self):
         return self._size == 0
 
@@ -56,8 +58,8 @@ class LinkedList:
     def popElement(self):
         # check to see if the stack is empty before removing
         # raise an exception if empty
-        if self.is_empty():
-            raise IndexError("Stack is empty, nothing to remove.")
+        if self.is_empty() == True:
+            return print("Stack is empty, nothing to remove.")
         elif self.head == self.tail:
             self.head = None
             self.tail = None
@@ -69,20 +71,29 @@ class LinkedList:
 
     # Look to see what the top element is without removing it.
 
-# Create a function that will tell you how many elements are in the stack.
-
+    # Create a function that will tell you how many elements are in the stack.
     def size(self):
         return self._size
 
+    # We need to make the object iterable. If it is not then we can't
+    # tell it to print the string everytime we add a new element.
+    def __iter__(self):
+        curr = self.head
+        while curr is not None:
+            yield curr.element
+            curr = curr.next
+
     # Print a string so that you know what is in your linked list
+
     def __str__(self):
-        output = "Your linked List: "
+        output = "Your Linked List: "
         first = True
         for value in self:
             if first:
                 first = False
             else:
                 output += ", "
+            output += str(value)
         output += "."
         return output
 
@@ -93,22 +104,37 @@ newLinkedList = LinkedList()
 newLinkedList.is_empty()
 # Add new nodes using the push method.
 newLinkedList.pushElement("This")
+# We are going to print the list everytime we change it so that we can see what is happening.
+print(newLinkedList)
 newLinkedList.pushToTail("is")
+print(newLinkedList)
 newLinkedList.pushToTail("a")
+print(newLinkedList)
 newLinkedList.pushToTail("linked")
+print(newLinkedList)
 newLinkedList.pushToTail("list")
+print(newLinkedList)
+# print("\n")
 # Take a look and see what the last element, or tail, is.
 # newLinkedList.peek()  # should return "list"
 # Look and see if the stack is empty, should return false.
 newLinkedList.is_empty()
 # Check how many nodes are in the linked list.
-newLinkedList.size()  # Should return 5
-newLinkedList.pushElement("!")
-# Rwmove using the pop.
+print("How many values are in the list?")
+newVariable = newLinkedList.size()  # Should return 5
+print(newVariable)
+print("Add another value to the tail.")
+newLinkedList.pushToTail("!")
+print(newLinkedList)
+newVariable = newLinkedList.size()  # Should return 6
+print("How many values are in the list?")
+print(newVariable)
+print("Remove 7 values.")
+# Remove using the pop.
 newLinkedList.popElement()  # removes "!""
-# newLinkedList.popElement()  # removes "list"
-# newLinkedList.popElement()  # removes "linked"
-# newLinkedList.popElement()  # removes "a"
-# newLinkedList.popElement()  # removes "is"
-# newLinkedList.popElement()  # removes "This"
-# newLinkedList.popElement()
+newLinkedList.popElement()  # removes "list"
+newLinkedList.popElement()  # removes "linked"
+newLinkedList.popElement()  # removes "a"
+newLinkedList.popElement()  # removes "is"
+newLinkedList.popElement()  # removes "This"
+newLinkedList.popElement()
