@@ -8,7 +8,8 @@ Linked lists are comprimised of nodes. Each node stores a piece of data linked t
 
 ![Types of Linked Lists](/Tutorial/pictures/linkedListTypes.jpeg)
 
-We are going to go over an example of the LIFO principle of stacks by using a linked list as the underlying storage class.
+We are going to go over an example of the LIFO principle of stacks by using a linked list as the underlying storage class.  
+  
     # Linked List Stack
     class LinkedList():
 
@@ -157,7 +158,7 @@ Linked lists are also great for having a list that you can insert a new node/val
   
 In this problem we are going to build list of map directions. After we already have a route we are going to add another stop in the middle of the journey. Then print the new list of directions.  
   
-The answer can be found at: [Linked List Answer](/Tutorial/python/linkedList_solution.py)
+ 
 
     class MapList:
         """
@@ -302,4 +303,6 @@ The answer can be found at: [Linked List Answer](/Tutorial/python/linkedList_sol
     adventure.replace("Turn Right onto 600 N", "Turn *Left* onto 600 N")
     print(adventure)
 
-
+  
+The answer can be found at: [Linked List Answer](/Tutorial/python/linkedList_solution.py)  
+ 
